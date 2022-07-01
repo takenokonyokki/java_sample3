@@ -64,5 +64,68 @@ public class Code15Main {
 		
 		//文字列を指定した2つの位置の間にある文字列を返す
 		System.out.println("文字列s5の0～4文字目は" + s5.substring(0,4));
+		
+		
+		
+		//StringBuilderを用いた連結
+		//Javaという文字列を1万回連結して文字列を作る
+		StringBuilder sb = new StringBuilder(); //StringBuilderクラスのインスタンスを作成
+		for (int i = 0; i < 10000; i++) {
+			sb.append("Java"); //appendメソッドを使用
+		}
+		
+		String s = sb.toString();
+		System.out.println(s);
+		
+		
+		
+		//matchesメソッド
+		//文字列パターンを用いたプレイヤー名チェック
+//		public boolean isVaildPlayerName(String name) {
+//			return name.matches("[A-Z][A-Z0-9]{7}");
+//		}
+		
+		//正規表現の基本文法
+		String s6 = "Java";
+		s6.matches("Java"); //true
+		s6.matches("JavaJava"); //false
+		s6.matches("java"); //false
+		
+		
+		//splitメソッドを使った文字列の分割
+		String s7 = "abc,def:ghi";
+		String[] words = s7.split("[,:]"); //,か:のところで分割できるようにする
+		for (String w : words) {
+			System.out.print(w + "->");
+		}
+		
+		
+		//replaceAllメソッドを使った文字列の置換
+		String w = s7.replaceAll("[beh]", "X"); //b,e,hのところをXに置換する
+		System.out.println(w);
+		
+		
+		
+		//文字列の書式整形
+		//format()メソッド
+		final String FORMAT = "%-9s %-13s 所持金%,6d";
+		//% 修飾 桁 型　←プレースホルダの書式
+		/*修飾： ,　・・・　3桁ごとにカンマを入れる
+		 *     0　・・・　空き領域を0埋め
+		 *     -　・・・　左寄せ
+		 *     + ・・・　符号を強制表示
+		 */
+		/*桁：表示形式を指定する。
+		 * n.m形式で指定した場合、全体n桁、小数点以下m桁での表示となる
+		 */
+		/*型： d ・・・ 整数
+		 * 　　s　・・・　文字列
+		 * 　　f ・・・　小数
+		 *   b ・・・　真偽値
+		 */
+		
+		//format()メソッドを使って文字列を作ると同時に画面出力したい場合は、
+		//System.out.printf(書式文字列, パラメータ・・・);　とする
+		
 	}	
 }
