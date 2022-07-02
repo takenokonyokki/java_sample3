@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.Date;
 public class Code15Main2 {
 	public static void main(String[] args) {
@@ -22,5 +23,19 @@ public class Code15Main2 {
 		System.out.println(now.getTime());
 		Date past = new Date(1600705425827L);
 		System.out.println(past);
+		
+		
+		//Calendarクラス
+		Calendar c = Calendar.getInstance();
+		//6つのint値からDateインスタンスを生成
+		c.set(2022, 7, 2, 23, 10, 10);
+		c.set(Calendar.MONTH, 7); //「月」の取得・設定には0～11を使用。8月を設定するには左記となる。
+		Date d = c.getTime();
+		System.out.println(d);
+		//Dateインスタンスからint値を生成
+		Date now1 = new Date();
+		c.setTime(now1);
+		int y = c.get(Calendar.YEAR);
+		System.out.println(y);
 	}
 }
