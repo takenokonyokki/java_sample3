@@ -31,5 +31,19 @@ public class Code17Main {
 		} catch (Exception e) {
 			System.out.println("何らかのエラーが発生しました");
 		}
+		
+		
+		//Personクラスのインスタンス
+		Person p = new Person();
+		//p.setAge(-11); //0以上でないため、エラーが発生する
+		
+		
+		//オリジナルの例外を利用
+		try {
+			//試験敵に例外を発生させる
+			throw new UnsupporttedMusicFileException("未対応のファイルです");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
